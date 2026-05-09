@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class CandyJar {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int N = 10; // maximum capacity
+        int K = 5;  // minimum candies
+        int jar = N;
+
+        System.out.print("Enter candies to buy: ");
+        int candies = sc.nextInt();
+
+        
+        if (candies > jar || candies < 0) {
+            System.out.println("INVALID INPUT");
+        }
+        else {
+
+            
+            jar = jar - candies;
+
+            System.out.println("Number of Candies Sold: " + candies);
+
+            
+            if (jar <= K) {
+                jar = N;
+            }
+
+            System.out.println("Number of Candies available: " + jar);
+        }
+    }
+}
